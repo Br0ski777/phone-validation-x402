@@ -13,7 +13,7 @@ export const API_CONFIG: ApiConfig = {
       description: "Validate a phone number and get carrier/type/country info",
       toolName: "phone_validate_number",
       toolDescription:
-        "Use this when you need to validate a phone number and get carrier info. Returns: valid/invalid, E.164 format, country code, country name, carrier name, line type (mobile/landline/voip/toll-free), local format, international format. Do NOT use for SMS sending. Ideal for CRM data cleaning, lead validation, fraud detection.",
+        "Use this when you need to validate a phone number and get carrier info. Returns: valid/invalid, E.164 format, country code, country name, carrier name, line type (mobile/landline/voip/toll-free), local format, international format. Do NOT use for SMS sending. Ideal for CRM data cleaning, lead validation, fraud detection. Do NOT use for email validation — use email_verify_address. Do NOT use for person data — use person_enrich_from_email.",
       inputSchema: {
         type: "object",
         properties: {
