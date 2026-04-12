@@ -13,7 +13,6 @@ app.use("*", logger());
 app.get("/", (c) => c.json(healthResponse(API_CONFIG.name)));
 app.get("/health", (c) => c.json({ status: "ok", timestamp: Date.now() }));
 
-registerRoutes(app);
 
 async function setupPayments() {
   try {
@@ -28,5 +27,7 @@ async function setupPayments() {
 }
 
 await setupPayments();
+
+registerRoutes(app);
 
 Bun.serve({ fetch: app.fetch, port: parseInt(process.env.PORT || "3000", 10) });
