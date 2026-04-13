@@ -32,6 +32,54 @@ Do NOT use for SMS capability check -- use sms_validate_number instead. Do NOT u
         },
         required: ["phone"],
       },
+      outputSchema: {
+          "type": "object",
+          "properties": {
+            "phone": {
+              "type": "string",
+              "description": "Input phone number"
+            },
+            "e164": {
+              "type": "string",
+              "description": "E.164 formatted number"
+            },
+            "valid": {
+              "type": "boolean",
+              "description": "Whether number is valid"
+            },
+            "country": {
+              "type": "object",
+              "properties": {
+                "code": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "dialCode": {
+                  "type": "string"
+                }
+              }
+            },
+            "numberType": {
+              "type": "string",
+              "description": "Number type (mobile/landline)"
+            },
+            "smsCapable": {
+              "type": "boolean",
+              "description": "Whether SMS-capable"
+            },
+            "nationalNumber": {
+              "type": "string",
+              "description": "National number format"
+            }
+          },
+          "required": [
+            "phone",
+            "e164",
+            "valid"
+          ]
+        },
     },
     {
       method: "POST",
@@ -60,6 +108,35 @@ Do NOT use for single numbers -- use phone_validate_number instead. Do NOT use f
         },
         required: ["phones"],
       },
+      outputSchema: {
+          "type": "object",
+          "properties": {
+            "total": {
+              "type": "number",
+              "description": "Total numbers validated"
+            },
+            "valid": {
+              "type": "number",
+              "description": "Count of valid numbers"
+            },
+            "invalid": {
+              "type": "number",
+              "description": "Count of invalid numbers"
+            },
+            "results": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            }
+          },
+          "required": [
+            "total",
+            "valid",
+            "invalid",
+            "results"
+          ]
+        },
     },
   ],
 };
