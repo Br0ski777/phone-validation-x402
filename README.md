@@ -35,8 +35,8 @@ Any x402-aware client ([`@x402/fetch`](https://www.npmjs.com/package/@x402/fetch
 
 | Tool | Method | Path | Price | Description |
 |---|---|---|---|---|
-| `phone_validate_number` | GET | `/api/validate` | $0.003 | Validate a phone number and get carrier/type/country info |
-| `phone_validate_batch` | POST | `/api/validate/batch` | $0.025 | Validate up to 50 phone numbers in a single batch request |
+| `phone_validate_number` | GET | `/api/validate` | $0.008 | Validate a phone number and get carrier/type/country info |
+| `phone_validate_batch` | POST | `/api/validate/batch` | $0.035 | Validate up to 50 phone numbers in a single batch request |
 
 ### `phone_validate_number`
 
