@@ -9,7 +9,7 @@ export const API_CONFIG: ApiConfig = {
     {
       method: "GET",
       path: "/api/validate",
-      price: "$0.003",
+      price: "$0.008",
       description: "Validate a phone number and get carrier/type/country info",
       toolName: "phone_validate_number",
       toolDescription:
@@ -84,7 +84,7 @@ Do NOT use for SMS capability check -- use sms_validate_number instead. Do NOT u
     {
       method: "POST",
       path: "/api/validate/batch",
-      price: "$0.025",
+      price: "$0.035",
       description: "Validate up to 50 phone numbers in a single batch request",
       toolName: "phone_validate_batch",
       toolDescription:
